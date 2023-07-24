@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shaded_app_freelancer/user_app/user_home.dart';
+import 'package:shaded_app_freelancer/widget/onBoarding/on_boarding_screen.dart';
 
 void main() {
   runApp( ShadedApp());
@@ -7,14 +8,15 @@ void main() {
 class ShadedApp extends StatelessWidget {
    ShadedApp({super.key});
 
-  Color appColor = const Color.fromRGBO(0, 210, 127, 1);
+ static Color appColor = const Color.fromRGBO(0, 210, 127, 1);
 
-Color secondaryAppColor = const Color.fromRGBO(253, 156, 20, 1);
+static Color secondaryAppColor = const Color.fromRGBO(253, 156, 20, 1);
 
 
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     elevation: 0.0,
@@ -31,7 +33,7 @@ Color secondaryAppColor = const Color.fromRGBO(253, 156, 20, 1);
   ),
   useMaterial3: true,
 ),
-      home:const UserHome(),
+      home: OnBoardingScreen(),
     );
   }
 }
