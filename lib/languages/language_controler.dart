@@ -1,31 +1,35 @@
-
-import 'package:flutter/foundation.dart';
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LanguageProvider with ChangeNotifier {
-  bool isEn = true;
+class LanguageControler extends GetxController {
+  bool isEn = false;
 
-
-  
-  changeLan(bool lan) async{
+ changeLan(bool lan) async{
     isEn = lan;
-    notifyListeners();
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setBool("isEn", isEn);
+    update();
   }
 
   getLan() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     isEn = prefs.getBool("isEn")?? true;
-    notifyListeners();
+    update();
   }
 
-  getTexts(String txt) {
-    if (isEn == true) return textsEn[txt];
+   getTexts(String txt) {
+    if (isEn == true){
+      update();
+      return textsEn[txt];
+    } else{
+      update();
     return textsAr[txt];
+    }
+    
   }
   Map<String, Object> textsAr = {
-  "hello": "أهلا! 👋",
+
+      "hello": "أهلا! 👋",
   "welcome_from_you": "مرحباً بك 👋",
   "welcome": "مرحبا! 👋",
   "select_language_app": "اختر لغة التطبيق",
