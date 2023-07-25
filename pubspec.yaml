@@ -42,6 +42,8 @@ dependencies:
   get: ^4.6.5
   intl_phone_field: ^3.2.0
   firebase_messaging: ^14.6.5
+  badges: ^3.1.1
+  avatar_glow: ^2.0.2
   
 
 dev_dependencies:
@@ -72,7 +74,6 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
-    - assets/images/test_images/
     - assets/icons/
     - assets/google_fonts/
     - assets/

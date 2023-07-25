@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../controller/on_boarding_controller.dart';
+import '../../languages/language_controler.dart';
 import '../../main.dart';
 
 class OnBoardingScreen extends StatelessWidget {
+   final LanguageControler getLan = Get.put(LanguageControler());
+      final OnBoardingCubit cubit = Get.put(OnBoardingCubit());
+
+List<String> imges = [
+   "assets/images/on-boarding-1.svg",
+    "assets/images/on-boarding-2.svg",
+     "assets/images/on-boarding-3.svg",
+];
    OnBoardingScreen({super.key});
    
    void onChanged(int int){
      int +=1 ;
      cubit.checkIndex(int);
-     print('fun = ${cubit.isLast}');
   }
-    var cubit = OnBoardingCubit();
   @override
   Widget build(BuildContext context) {
    return Directionality(
-    textDirection: TextDirection.rtl,
+    textDirection: getLan.isEn ?TextDirection.ltr : TextDirection.rtl,
      child: Scaffold(
               appBar: AppBar(
                 automaticallyImplyLeading: false,
@@ -25,9 +33,9 @@ class OnBoardingScreen extends StatelessWidget {
                 leading: TextButton(
                     onPressed: () {},
                     // => Get.to(const LoginPage()),
-                    child: const Text(
-                      "تخطي",
-                      style: TextStyle(fontSize: 14),
+                    child:  Text(
+                      getLan.getTexts('skip'),
+                      style: const TextStyle(fontSize: 14),
                     )),
               ),
               body: SafeArea(
@@ -42,7 +50,7 @@ class OnBoardingScreen extends StatelessWidget {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           onPageChanged: (index) => onChanged(index),
                           controller: OnBoardingCubit.controller,
-                          itemCount: OnBoardingCubit.model.length,
+                          itemCount: imges.length,
                           physics: const BouncingScrollPhysics(),
                           itemBuilder: (context, index) =>
                              Column(
@@ -52,7 +60,7 @@ class OnBoardingScreen extends StatelessWidget {
       Expanded(
         flex: 4,
         child: SvgPicture.asset(
-          "${OnBoardingCubit.model[index].images}",
+          imges[index].toString(),
           fit: BoxFit.fill,
           alignment: Alignment.center,
           width: double.infinity,
@@ -62,9 +70,8 @@ class OnBoardingScreen extends StatelessWidget {
       Expanded(
         flex: 1,
         child: Text(
+          getLan.getTexts('on_boarding')[index],
           textAlign: TextAlign.center,
-          "${OnBoardingCubit.model[index].title}",
-          locale: const Locale("ar"),
           style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
         ),
       )
@@ -83,7 +90,7 @@ class OnBoardingScreen extends StatelessWidget {
                                 flex: 1,
                                 child: SmoothPageIndicator(
                                   controller: OnBoardingCubit.controller,
-                                  count: OnBoardingCubit.model.length,
+                                  count: imges.length,
                                   onDotClicked: (index) =>
                                       cubit.onDotPressed(context, index),
                                   effect: WormEffect(
@@ -101,11 +108,10 @@ class OnBoardingScreen extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(14.0)),
                                 height: 50.0,
                                 color: ShadedApp.appColor,
-                                child: cubit.isLast != false ? const Text(  "ابدأ الآن",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 16)) :const Text(  "التالي",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 16)),
+                                child:  Text(
+                                  cubit.isLast ? getLan.getTexts('start_now'): getLan.getTexts('next'),
+                                    style: const TextStyle(
+                                        color: Colors.white, fontSize: 16)) ,
                               ),
                             ),
                            const SizedBox(height: 80),

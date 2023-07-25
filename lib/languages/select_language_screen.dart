@@ -105,15 +105,19 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
                                   ),
                                 ),
                                 const SizedBox(height: 55,),
-                                  Container(
-                                       padding:
-                                      const EdgeInsets.symmetric(horizontal: 12.0),
-                                    child: RawMaterialButton(onPressed:()=> Get.to(OnBoardingScreen()),
-                                     
-                                                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                                                              // padding:  EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.35,vertical: 8),
-                                                              fillColor: ShadedApp.appColor,child: const Text('التالي',style: TextStyle(color: Colors.white,fontSize: 20),),),
-                                  ),
+                                  SizedBox(
+                              width: 327,
+                              child: MaterialButton(
+                                onPressed: () => Get.to(OnBoardingScreen()),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(14.0)),
+                                height: 50.0,
+                                color: ShadedApp.appColor,
+                                child: Text(getLan.getTexts('next'),
+                                    style: const TextStyle(
+                                        color: Colors.white, fontSize: 16)) 
+                              ),
+                            ),
                         
                               ],
                             )),

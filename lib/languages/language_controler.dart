@@ -38,9 +38,12 @@ class LanguageControler extends GetxController {
   "change_language_from_settings": "يمكنك تغيير اللغة باي وقت من الإعدادات",
   "next": "التالي",
   "skip": "تخطي",
-  "on_boarding_1": "اطلب ما تشاء  وحدد وقت التوصيل الذي يناسبك ونحن نكفيك عناء الشراء والتوصيل.",
-  "on_boarding_2": "ارسل طلبك لاي مكان وطلبك بايدي امينة مع ضمان وصولها لنهاية المسار بدون ضرر ولا تلف",
-  "on_boarding_3": "هل تملك مركبة؟ انضم لعائلتنا اليوم كمنقذ لتوصيل طلبات زبائننا في وقت فراغك.",
+  "start_now": "ابدأ الان",
+   "on_boarding" : [
+      "اطلب ما تشاء  وحدد وقت التوصيل الذي يناسبك ونحن نكفيك عناء الشراء والتوصيل.",
+ "ارسل طلبك لاي مكان وطلبك بايدي امينة مع ضمان وصولها لنهاية المسار بدون ضرر ولا تلف",
+   "هل تملك مركبة؟ انضم لعائلتنا اليوم كمنقذ لتوصيل طلبات زبائننا في وقت فراغك.",
+],
   "create_account": "إنشاء حساب",
   "enter_phone_number": "أدخل رقم هاتفك للتحقق",
   "or": "أو تسجيل الدخول بـ",
@@ -55,8 +58,9 @@ class LanguageControler extends GetxController {
   "is_verify": "يتم التحقق",
   "select_location": "تحديد الموقع",
   "desc_location_page": "من فضلك قم بتحديد الموقع للسماح للتطبيق للوصول إلى موقعك",
-  "the_delivery_be_more_easy": "مرحبا !\nالتوصيل أصبح سهلا ....",
+  "the_delivery_be_more_easy": "... التوصيل أصبح سهلا",
   "search_on_your_order": "أبحث عن طلبك ...",
+  "search":"بحث",
   "our_options": "خدماتنا",
   "quick": "نقل سريع",
   "tracking": "شاحنات و دينات",
@@ -68,7 +72,10 @@ class LanguageControler extends GetxController {
   "search": "بحث",
   "notifications": "الإشعارات",
   "pick_up": "بيك آب",
-  "long_form_field": "ضع قائمة بجميع الأشياء التي  تريد نقلها  / هل هناك أي تفاصيل أخرى مهمة تود إضافتها؟"
+  "long_form_field": "ضع قائمة بجميع الأشياء التي  تريد نقلها  / هل هناك أي تفاصيل أخرى مهمة تود إضافتها؟",
+  "last_searches" : "أحدث عمليات البحث",
+  "popular_services":"أكثر الخدمات طلباً",
+
 };
   Map<String, Object> textsEn = {
   "hello": "Hello! 👋",
@@ -80,10 +87,13 @@ class LanguageControler extends GetxController {
   "change_language_from_settings": "You can change app language from settings",
   "next": "Next",
   "skip": "Skip",
-  "on_boarding_1": "Order what you want and select the delivery time that suits you, and we will take care of the hassle of buying and delivering.",
-  "on_boarding_2": "Send your order to any place and your order in safe hands, while ensuring that it reaches the end of the track without damage or damage",
-  "on_boarding_3": "Do you own a vehicle? Join our family today as a savior to deliver our customers' orders in your free time.",
-  "create_account": "Login",
+  "start_now": "Start Now",
+  "on_boarding":[
+    "Order what you want and select the delivery time that suits you, and we will take care of the hassle of buying and delivering.",
+   "Send your order to any place and your order in safe hands, while ensuring that it reaches the end of the track without damage or damage",
+  "Do you own a vehicle? Join our family today as a savior to deliver our customers' orders in your free time.",
+  ],
+   "create_account": "Login",
   "enter_phone_number": "Enter your phone number to verify",
   "or": "Or signup via",
   "user": "User",
@@ -97,8 +107,9 @@ class LanguageControler extends GetxController {
   "is_verify": "loading",
   "select_location": "Select the location",
   "desc_location_page": "Please, Select a location to allow the app to access your location",
-  "the_delivery_be_more_easy": "Welcome !\nThe delivery become more easy ....",
+  "the_delivery_be_more_easy": "The delivery become more easy ....",
   "search_on_your_order": "Search on your order...",
+  "search":"search",
   "our_options": "Our services",
   "quick": "Quick Order",
   "tracking": "Trucks & Cars",
@@ -110,6 +121,8 @@ class LanguageControler extends GetxController {
   "search": "Search",
   "notifications": "Notifications",
   "pick_up": "Pick up",
-  "long_form_field": "List all the things you want to move / Are there any other important details you would like to add?"
+  "long_form_field": "List all the things you want to move / Are there any other important details you would like to add?",
+  "last_searches" : "last Searches",
+  "popular_services":"Popular Services",
 };
 }
